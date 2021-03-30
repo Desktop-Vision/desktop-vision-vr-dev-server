@@ -1,0 +1,22 @@
+{
+  "name": "desktop-vision-dev-server",
+  "version": "1.0.0",
+  "description": "A boilerplate dev server for building VR components and applications with Desktop Vision.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-cli serve",
+    "build": "webpack --config prod.config.js"
+  },
+  "author": "Devon Bradley",
+  "license": "ISC",
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "ngrok": "^4.0.0",
+    "webpack": "^5.28.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "three": "^0.126.1"
+  }
+}
