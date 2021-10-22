@@ -11,12 +11,12 @@
   "license": "ISC",
   "devDependencies": {
     "file-loader": "^6.2.0",
-    "ngrok": "^4.0.0",
-    "webpack": "^5.28.0",
-    "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "^3.11.2"
+    "ngrok": "^4.2.2",
+    "webpack": "^5.59.1",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.3.1"
   },
   "dependencies": {
-    "three": "^0.126.1"
+    "three": "^0.133.1"
   }
 }

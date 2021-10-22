@@ -7,46 +7,45 @@ module.exports = () => {
   return new Promise(async (resolve, reject) => {
     try {
       const ngrokUrl = await ngrok.connect(port)
-      resolve(
-        {
-          mode: 'none',
-          target: 'web',
-          entry: './index.js',
-          output: {
-            path: path.resolve(__dirname, 'public'),
-            filename: 'bundle.js',
+      console.log(`NGROK URL: ${ngrokUrl}`)
+      resolve({
+        mode: 'none',
+        target: 'web',
+        entry: './index.js',
+        output: {
+          path: path.resolve(__dirname, 'public'),
+          filename: 'bundle.js',
+        },
+        devServer: {
+          static: './public',
+          port,
+          hot: false,
+          liveReload: false,
+          allowedHosts: 'all',
+          headers: {
+            'Access-Control-Allow-Origin': '*',
           },
-          devServer: {
+          devMiddleware: {
             writeToDisk: true,
-            contentBase: './public',
-            disableHostCheck: true,
-            port,
-            hot: false,
-            inline: false,
-            liveReload: false,
-            injectClient: false,
-            headers: {
-              "Access-Control-Allow-Origin": "*"
-            }  
-          },    
-          module: {
-            rules: [
-              {
-                test: /\.(png|jpe?g|gif|glb|gltf|fbx)$/i,
-                use: [
-                  {
-                    loader: 'file-loader',
-                    options: {
-                      outputPath: 'assets',
-                      publicPath: `${ngrokUrl}/assets`
-                    }    
+          },
+        },
+        module: {
+          rules: [
+            {
+              test: /\.(png|jpe?g|gif|glb|gltf|fbx)$/i,
+              use: [
+                {
+                  loader: 'file-loader',
+                  options: {
+                    outputPath: 'assets',
+                    publicPath: `${ngrokUrl}/assets`,
                   },
-                ],
-              },
-            ]
-          }
-        }
-      )
+                },
+              ],
+            },
+          ],
+        },
+      })
     } catch (error) {
       reject(error)
     }

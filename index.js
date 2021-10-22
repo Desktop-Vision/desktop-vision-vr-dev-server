@@ -3,14 +3,14 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import Monkey from './assets/monkey.glb'
 
 let m = null
-const loader = new GLTFLoader();
-loader.load( Monkey, function ( gltf ) {
+const loader = new GLTFLoader()
+loader.load(Monkey, function (gltf) {
   m = gltf.scene
   m.scale.setScalar(0.1)
   m.position.y += 1.2
   m.position.z -= 0.4
   m.position.x += 0.6
-  DVScene.add( m )
+  DVScene.add(m)
 })
 
 // this function is invoked every frame via a request animation frame loop
