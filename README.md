@@ -13,7 +13,7 @@ This boilerplate is setup for development of webxr components and apps with Desk
 To create a new project based on this template using [tiged](https://github.com/tiged/tiged):
 
 ```
-  npx tiged Desktop-Vision/desktop-vision-dev-server my-vr-project
+  npx tiged Desktop-Vision/desktop-vision-vr-dev-server my-vr-project
   cd my-vr-project
   npm i
   npm run dev
