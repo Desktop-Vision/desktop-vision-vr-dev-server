@@ -36,5 +36,7 @@ To build a production version of your web app:
 
 - Global Scope (window)
   - THREE is already included so you don't have to import it in index.js.
-  - DVScene is the three.js scene that Desktop Vision creates.
+  - DVRenderer is the renderer used for the Desktop Vision scene. 
+  - DVScene is the scene that Desktop Vision creates.
+  - DVCamera is the camera that is used for the Desktop Vision scene.
   - DVTick is a function that is called every frame in the animation loop. Overwrite this function for things you want to happen every frame. This is implemented to avoid the scenario where your code adds a new reqeustAnimationFrame loop every time a change is made to your code and the bundle is sent to the Desktop Vision scene.
