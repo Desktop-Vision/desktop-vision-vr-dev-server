@@ -50,6 +50,7 @@
           10,
         )
         camera.position.set(0, 1.6, 3)
+        window.DVCamera = camera
 
         controls = new OrbitControls(camera, container)
         controls.target.set(0, 1.2, 0)
@@ -84,6 +85,8 @@
         renderer.outputEncoding = THREE.sRGBEncoding
         renderer.shadowMap.enabled = true
         renderer.xr.enabled = true
+        
+        window.DVRenderer = renderer
 
         container.appendChild(renderer.domElement)
 
