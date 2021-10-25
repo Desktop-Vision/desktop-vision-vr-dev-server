@@ -1,6 +1,6 @@
-# Desktop Vision Dev Server
-
-## HEADS UP: This dev server utilizes ngrok to serve your imported static files from your localhost to your headset (even if the headset is on a different network)
+<img src="https://user-images.githubusercontent.com/5935459/138653274-472a588b-330d-4009-8c0d-156d0f01072b.png" alt="banner" width="100%">
+                                                                                                                                    
+### HEADS UP: This dev server utilizes ngrok to serve your imported static files from your localhost to your headset (even if the headset is on a different network)
 
 Read more about ngrok [here](https://www.npmjs.com/package/ngrok)
 
