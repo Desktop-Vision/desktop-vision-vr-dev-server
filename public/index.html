@@ -101,9 +101,7 @@
         scene.add(controller2)
 
         const controllerModelFactory = new XRControllerModelFactory()
-        const handModelFactory = new XRHandModelFactory().setPath(
-          './models/fbx/',
-        )
+        const handModelFactory = new XRHandModelFactory()
 
         // Hand 1
         controllerGrip1 = renderer.xr.getControllerGrip(0)
@@ -113,7 +111,7 @@
         scene.add(controllerGrip1)
 
         hand1 = renderer.xr.getHand(0)
-        hand1.add(handModelFactory.createHandModel(hand1))
+        hand1.add(handModelFactory.createHandModel(hand1, 'mesh'))
 
         scene.add(hand1)
 
@@ -125,22 +123,22 @@
         scene.add(controllerGrip2)
 
         hand2 = renderer.xr.getHand(1)
-        hand2.add(handModelFactory.createHandModel(hand2))
+        hand2.add(handModelFactory.createHandModel(hand2, 'mesh'))
         scene.add(hand2)
 
-        //
+        // draw lines from hands or controllers
 
-        const geometry = new THREE.BufferGeometry().setFromPoints([
-          new THREE.Vector3(0, 0, 0),
-          new THREE.Vector3(0, 0, -1),
-        ])
+        // const geometry = new THREE.BufferGeometry().setFromPoints([
+        //   new THREE.Vector3(0, 0, 0),
+        //   new THREE.Vector3(0, 0, -1),
+        // ])
 
-        const line = new THREE.Line(geometry)
-        line.name = 'line'
-        line.scale.z = 5
+        // const line = new THREE.Line(geometry)
+        // line.name = 'line'
+        // line.scale.z = 5
 
-        controller1.add(line.clone())
-        controller2.add(line.clone())
+        // controller1.add(line.clone())
+        // controller2.add(line.clone())
 
         //
 
@@ -159,7 +157,6 @@
       }
 
       function render() {
-        renderer.render(scene, camera)
         if (window.DVTick) {
           try {
             window.DVTick()
@@ -167,6 +164,7 @@
             console.error(error)
           }
         }
+        renderer.render(scene, camera)
       }
 
       const script = document.createElement('script')
