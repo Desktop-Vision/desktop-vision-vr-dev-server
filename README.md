@@ -10,10 +10,10 @@ Read more about ngrok [here](https://www.npmjs.com/package/ngrok)
 
 This boilerplate is setup for development of webxr components and apps with Desktop Vision. Desktop Vision gives you a virtual office that you can control your computer from while live coding the enviroment around you.
 
-To create a new project based on this template using [tiged](https://github.com/tiged/tiged):
+To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
 
 ```
-  npx tiged Desktop-Vision/desktop-vision-vr-dev-server my-vr-project
+  npx degit Desktop-Vision/desktop-vision-vr-dev-server my-vr-project
   cd my-vr-project
   npm i
   npm run dev
